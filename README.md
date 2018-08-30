@@ -23,7 +23,7 @@ max_binlog_size         = 100M
 binlog_do_db            = minha_base 
 ```    
 Dentro do prompt do mysql:    
-1. mysql > GRANT REPLICATION SLAVE ON *.* TO 'slave_user'@'%' IDENTIFIED BY 'password';     
+1. mysql > `GRANT REPLICATION SLAVE ON *.* TO 'slave_user'@'%' IDENTIFIED BY 'password'`;     
 2. mysql > FLUSH PRIVILEGES;    
 3. mysql > SHOW MASTER STATUS;    
    > Salvar os valores para configurar no slave   
@@ -37,6 +37,9 @@ Confirmar os parâmetros do arquivo slave/conf.d/slave.cnf:
 server-id               = 2 
 replicate-do-db         = minha_base 
 ``` 
+
+
+
 Dentro do shell:  
 5. /# mysql -u root -p minha_base < /backup/backup.sql    
 6. /# ping mysql-master     
